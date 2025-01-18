@@ -5,7 +5,8 @@ namespace libraryManagementSystem;
 
 internal class UserInterface
 {
-    internal static void MainMenu()
+    private BooksController booksController = new BooksController();
+    internal void MainMenu()
     {
         while (true)
         {
@@ -17,13 +18,13 @@ internal class UserInterface
             switch (choice)
             {
                 case MenuOption.Viewbooks:
-                    BooksController.ViewBooks();
+                    booksController.ViewBooks();
                     break;
                 case MenuOption.AddBook:
-                    BooksController.AddBook();
+                    booksController.AddBook();
                     break;
                 case MenuOption.DeleteBook:
-                    BooksController.DeleteBook();
+                    booksController.DeleteBook();
                     break;
             }
         }
