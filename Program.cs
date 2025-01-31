@@ -9,7 +9,7 @@ while (true)
     Console.WriteLine("\nLibrary Management System");
     Console.WriteLine("\n1. Add a Book");
     Console.WriteLine("2. Remove a Book");
-    Console.WriteLine("3. Search Library");
+    Console.WriteLine("3. Search Library"); //need to implement menthod in library class and write logic for it below in switch case 
     Console.WriteLine("4. Library Inventory");
     Console.WriteLine("5. Exit Library");
     Console.Write("\nEnter a number to choose action: ");
@@ -29,10 +29,12 @@ while (true)
         case "2":
             Console.Write("Enter the title of the book you wish to remove: ");
             title = Console.ReadLine();
+            library.RemoveBook(title);
             break;
 
         case "3":
             Console.Write("Do you wish to search the library by \"title\" or \"author\": ");
+            string search = Console.ReadLine();
             break;
 
         case "4":
@@ -40,12 +42,12 @@ while (true)
             break;
 
         case "5":
-            Console.WriteLine("You're leaving the library. Have a great day!");
+            Console.WriteLine("Thanks for visiting the library. Have a great day!");
             return;
 
         default:
             Console.Clear();
-            Console.WriteLine("\nInvalid entry. Please enter a choice between 1 & 5.");
+            Console.WriteLine("\nInvalid entry. Please select choices 1-5.");
             break;
 
     }
